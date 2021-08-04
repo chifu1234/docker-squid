@@ -17,6 +17,7 @@
 name: docker-test
 on:
   pull_request:
+  push:
 jobs:
   build-test:
     if: ${{ github.event.issue.pull_request }} && ! contains(github.event.head_commit.message, 'ci skip')
