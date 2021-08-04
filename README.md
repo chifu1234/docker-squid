@@ -56,7 +56,7 @@ busybox --list
 Supported tags are:
 
 - `latest`, `5`, `5.0`, `5.0.4`, `latest-debug`, `5-debug`, `5.0-debug`, `5.0.4-debug`
-- `latest`, `4`, `5.0`, `5.0.4`, `latest-debug`, `5-debug`, `5.0-debug`, `5.0.4-debug`
+- `4`, `4.13`,`4-debug`, `4.13-debug`
 
 ## Security notice
 
