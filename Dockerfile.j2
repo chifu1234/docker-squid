@@ -36,6 +36,13 @@ RUN curl -L https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz -o automake-1.
   && make \
   && make install
 WORKDIR /${BUILD}
+{% if patch %}
+ RUN curl -L https://github.com/squid-cache/squid/archive/SQUID_{{ major }}_{{ minor }}_{{ patch }}.tar.gz -o $BUILD/squid.tar.gz \
+  && tar -xzf ${BUILD}/squid.tar.gz   
+{% else %}
+ RUN curl -L https://github.com/squid-cache/squid/archive/SQUID_{{ major }}_{{ minor }}.tar.gz -o $BUILD/squid.tar.gz \
+  && tar -xzf ${BUILD}/squid.tar.gz   
+{% endif %}
 RUN curl -L https://github.com/squid-cache/squid/archive/SQUID_{{ major }}_{{ minor }}_{{ patch }}.tar.gz -o $BUILD/squid.tar.gz \
   && tar -xzf ${BUILD}/squid.tar.gz
 WORKDIR /${BUILD}/squid-SQUID_{{ major }}_{{ minor }}_{{ patch }}
